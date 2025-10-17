@@ -183,14 +183,14 @@ jobs:
           echo "major=$MAJOR" >> $GITHUB_OUTPUT
           echo "minor=$MINOR" >> $GITHUB_OUTPUT
           echo "patch=$PATCH" >> $GITHUB_OUTPUT
-      - name: Create release in rosven9856/php-docker repository
+      - name: create release
         env:
-          GH_TOKEN: ${{ secrets._GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_RELEASE_CREATE_ACCESS_TOKEN }}
         run: |
           gh api \
             --method POST \
             -H "Accept: application/vnd.github+json" \
-            /repos/rosven9856/php-docker/releases \
+            /repos/forge-for-gitea/php-docker/releases \
             -f tag_name='${{ steps.version.outputs.sem_version }}+${{ steps.git.outputs.sha_short }}' \
             -f target_commitish='master' \
             -f name='${{ steps.version.outputs.sem_version }}+${{ steps.git.outputs.sha_short }}' \
