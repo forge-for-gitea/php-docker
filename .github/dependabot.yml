@@ -10,7 +10,9 @@ updates:
     schedule:
       interval: "cron"
       cronjob: "0 13 * * *"
-    versioning-strategy: "increase"
+    ignore:
+      - dependency-name: "php"
+        update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
