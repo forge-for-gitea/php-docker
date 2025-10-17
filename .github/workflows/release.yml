@@ -192,7 +192,7 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             /repos/forge-for-gitea/php-docker/releases \
             -f tag_name='${{ steps.version.outputs.sem_version }}+${{ steps.git.outputs.sha_short }}' \
-            -f target_commitish='master' \
+            -f target_commitish='${{env.BRANCH}}' \
             -f name='${{ steps.version.outputs.sem_version }}+${{ steps.git.outputs.sha_short }}' \
             -f body='' \
             -F draft=false \
