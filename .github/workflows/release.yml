@@ -9,7 +9,7 @@ on:
       - master
 
 env:
-  BRANCH: ${{ github.head_ref || github.ref_name }}
+  BRANCH: ${{ github.event.pull_request.base.ref }}
   VERSION: ''
 
 jobs:
