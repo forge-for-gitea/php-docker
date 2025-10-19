@@ -7,6 +7,7 @@ on:
     branches:
       - main
       - master
+      - v*.*
 
 env:
   BRANCH: ${{ github.event.pull_request.base.ref }}
