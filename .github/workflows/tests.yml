@@ -120,7 +120,7 @@ jobs:
       - uses: falti/dotenv-action@v1
         id: dotenv
       - run: docker build . -t=php
-      - run: docker run -it --rm php -v
+      - run: docker run --rm php -v
   pie:
     runs-on: ubuntu-latest
     steps:
@@ -131,7 +131,7 @@ jobs:
       - uses: falti/dotenv-action@v1
         id: dotenv
       - run: docker build . -t=php
-      - run: docker run -it --rm php pie -v
+      - run: docker run --rm php pie -v
   composer:
     runs-on: ubuntu-latest
     steps:
@@ -142,4 +142,4 @@ jobs:
       - uses: falti/dotenv-action@v1
         id: dotenv
       - run: docker build . -t=php
-      - run: docker run -it --rm php composer -v
+      - run: docker run --rm php composer -v
