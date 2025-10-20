@@ -6,6 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
+    target-branch: "v8.3"
     directory: "/"
     schedule:
       interval: "cron"
@@ -20,6 +21,7 @@ updates:
       - "dependencies"
       - "php"
   - package-ecosystem: "github-actions"
+    target-branch: "v8.3"
     directory: "/"
     schedule:
       interval: "weekly"
