@@ -8,9 +8,47 @@
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/forge-for-gitea/php-docker/ci.yml)](https://github.com/forge-for-gitea/php-docker/actions/workflows/ci.yml)
 [![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/forge-for-gitea/php-docker)](https://github.com/forge-for-gitea/php-docker/releases)
 
-This docker image was created to optimize builds used in private infrastructure and GitHub Actions
+Lightweight **PHP 8.3 FPM (Alpine)** container.
 
-## Developing
+Based on [**PHP 8.3 FPM (Alpine)**](https://hub.docker.com/_/php)
+
+## Features
+
+Tools:
+- [**Composer**](https://getcomposer.org/) (PHP Dependency Manager)
+- [**PIE**](https://github.com/php/pie) (PHP Installer for Extensions)
+
+Core Extensions:
+- [**opcache**](https://www.php.net/manual/en/book.opcache.php)
+- [**curl**](https://www.php.net/manual/en/book.curl.php)
+- [**phar**](https://www.php.net/manual/en/book.phar.php)
+
+Pecl Extensions:
+- [**pecl/zip**](https://pecl.php.net/package/zip)
+
+## Usage
+
+running php
+```shell
+docker run -it --rm forgeforgitea/php:8.3 -v
+```
+
+running pie
+```shell
+docker run -it --rm forgeforgitea/php:8.3 pie -v
+```
+
+installing extension
+```shell
+docker run -it --rm forgeforgitea/php:8.3 pie install pecl/pcov
+```
+
+running composer
+```shell
+docker run -it --rm forgeforgitea/php:8.3 composer -v
+```
+
+## Development
 
 build
 ```shell
