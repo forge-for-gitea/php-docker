@@ -1,15 +1,16 @@
 name: release
 
 on:
-  pull_request:
+  pull_request_target:
     types:
       - closed
     branches:
       - main
       - master
+      - v*.*
 
 env:
-  BRANCH: ${{ github.head_ref || github.ref_name }}
+  BRANCH: ${{ github.event.pull_request.base.ref }}
   VERSION: ''
 
 jobs:
@@ -17,7 +18,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
@@ -102,19 +103,58 @@ jobs:
         with:
           username: forgeforgitea
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
           push: false
           tags: ${{ steps.meta.outputs.tags }}
+  php:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{env.BRANCH}}
+      - run: cp .env.dist .env
+      - uses: falti/dotenv-action@v1
+        id: dotenv
+      - run: docker build . -t=php
+      - run: docker run --rm php -v
+  pie:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{env.BRANCH}}
+      - run: cp .env.dist .env
+      - uses: falti/dotenv-action@v1
+        id: dotenv
+      - run: docker build . -t=php
+      - run: docker run --rm php pie -v
+  composer:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{env.BRANCH}}
+      - run: cp .env.dist .env
+      - uses: falti/dotenv-action@v1
+        id: dotenv
+      - run: docker build . -t=php
+      - run: docker run --rm php composer -v
   release:
     if: github.event.pull_request.merged == true
     needs:
       - docker-build
+      - php
+      - pie
+      - composer
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
