@@ -18,7 +18,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
@@ -113,7 +113,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
@@ -125,7 +125,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
@@ -137,7 +137,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
@@ -154,7 +154,7 @@ jobs:
       - composer
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
