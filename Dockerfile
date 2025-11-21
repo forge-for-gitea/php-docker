@@ -14,8 +14,6 @@ RUN docker-php-ext-install opcache
 #     && docker-php-ext-configure zip \
 #     && docker-php-ext-install zip
 
-# RUN docker-php-ext-install phar
-
 COPY --from=pie /pie /usr/bin/pie
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 
