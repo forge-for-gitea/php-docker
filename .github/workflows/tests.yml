@@ -24,7 +24,7 @@ jobs:
   docker-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
@@ -114,7 +114,7 @@ jobs:
   php:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
@@ -125,7 +125,7 @@ jobs:
   pie:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
@@ -136,7 +136,7 @@ jobs:
   composer:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{env.BRANCH}}
       - run: cp .env.dist .env
