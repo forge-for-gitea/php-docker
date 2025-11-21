@@ -27,14 +27,19 @@ Pecl Extensions:
 
 ## Usage
 
+running php 8.5
+```shell
+docker run -it --rm forgeforgitea/php:8.5 -v
+```
+
+running php 8.4
+```shell
+docker run -it --rm forgeforgitea/php:8.4 -v
+```
+
 running php 8.3
 ```shell
 docker run -it --rm forgeforgitea/php:8.3 -v
-```
-
-or running php 8.4
-```shell
-docker run -it --rm forgeforgitea/php:8.4 -v
 ```
 
 running pie
