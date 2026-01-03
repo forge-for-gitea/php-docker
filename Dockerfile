@@ -1,5 +1,5 @@
 FROM ghcr.io/php/pie:1.3.3-bin AS pie
-FROM composer:2.9.2 AS composer
+FROM composer:2.9.3 AS composer
 FROM php:8.4.16-fpm-alpine
 
 RUN apk update
