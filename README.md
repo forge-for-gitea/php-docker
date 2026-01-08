@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="459" height="auto" src="./docs/img/php_docker.jpg">
+  <img width="459" height="auto" src="https://raw.githubusercontent.com/forge-for-gitea/php-docker/refs/heads/main/docs/img/php_docker.jpg">
 </p>
 
 # PHP Docker container
@@ -44,17 +44,17 @@ docker run -it --rm forgeforgitea/php:8.3 -v
 
 running pie
 ```shell
-docker run -it --rm forgeforgitea/php:8.4 pie -v
+docker run -it --rm forgeforgitea/php:8.5 pie -v
 ```
 
 installing extension
 ```shell
-docker run -it --rm forgeforgitea/php:8.4 pie install pecl/pcov
+docker run -it --rm forgeforgitea/php:8.5 pie install pecl/pcov
 ```
 
 running composer
 ```shell
-docker run -it --rm forgeforgitea/php:8.4 composer -v
+docker run -it --rm forgeforgitea/php:8.5 composer -v
 ```
 
 ## Development
