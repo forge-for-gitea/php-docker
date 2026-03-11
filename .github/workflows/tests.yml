@@ -104,7 +104,7 @@ jobs:
             type=semver,priority=300,pattern={{major}}.{{minor}},value=${{ steps.version.outputs.sem_version }}
             type=semver,priority=400,pattern={{major}},value=${{ steps.version.outputs.sem_version }}
       - uses: docker/setup-qemu-action@v4
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v4
       - uses: docker/build-push-action@v6
         with:
           context: .
