@@ -8,6 +8,11 @@ on:
       - main
       - master
       - v*.*
+    paths-ignore:
+      - .github/**
+      - .gitea/**
+      - docs
+      - README.md
 
 env:
   BRANCH: ${{ github.event.pull_request.base.ref }}
