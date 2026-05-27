@@ -8,14 +8,13 @@ updates:
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "cron"
-      cronjob: "0 13 * * *"
+      interval: "weekly"
     ignore:
       - dependency-name: "php"
         update-types:
           - "version-update:semver-major"
           - "version-update:semver-minor"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 9
     labels:
       - "dependencies"
       - "php"
@@ -23,7 +22,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 9
     labels:
       - "dependencies"
       - "github-actions"
@@ -31,14 +30,13 @@ updates:
     target-branch: "v8.4"
     directory: "/"
     schedule:
-      interval: "cron"
-      cronjob: "0 13 * * *"
+      interval: "weekly"
     ignore:
       - dependency-name: "php"
         update-types:
           - "version-update:semver-major"
           - "version-update:semver-minor"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 9
     labels:
       - "dependencies"
       - "php"
@@ -47,7 +45,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 9
     labels:
       - "dependencies"
       - "github-actions"
@@ -55,14 +53,13 @@ updates:
     target-branch: "v8.3"
     directory: "/"
     schedule:
-      interval: "cron"
-      cronjob: "0 13 * * *"
+      interval: "weekly"
     ignore:
       - dependency-name: "php"
         update-types:
           - "version-update:semver-major"
           - "version-update:semver-minor"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 9
     labels:
       - "dependencies"
       - "php"
@@ -71,7 +68,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 9
     labels:
       - "dependencies"
       - "github-actions"
