@@ -119,7 +119,9 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            Github. Creating new release php
+            -- Release --
+            Github
+            Creating new release php
             
             Repository: ${{ github.repository }}
             Release: ${{ github.event.release.tag_name }}
