@@ -1,4 +1,4 @@
-FROM ghcr.io/php/pie:1.4.10-bin AS pie
+FROM ghcr.io/php/pie:1.5.0-bin AS pie
 FROM composer:2.10.3 AS composer
 FROM php:8.5.10-fpm-alpine
 
