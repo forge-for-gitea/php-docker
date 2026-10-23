@@ -1,6 +1,6 @@
 FROM ghcr.io/php/pie:1.5.2-bin AS pie
 FROM composer:2.10.3 AS composer
-FROM php:8.5.11-fpm-alpine
+FROM php:8.5.12-fpm-alpine
 
 RUN apk update
 RUN apk add --no-cache curl curl-dev zip unzip $PHPIZE_DEPS
